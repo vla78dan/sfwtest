@@ -54,13 +54,26 @@
 </header>
 
 Подключили в файле header.php-->
-<?php get_header();  ?>
+<?php get_header(); ?>
 
 
 <main>
 
     <div class="album py-5 bg-light">
         <div class="container">
+
+            <!-- Цикл WordPress (The Loop) — это перебор записей (постов) и вывод какой-либо информации о каждом посте. Цикл получает массив записей (объектов), перебирает этот массив и во время перебора выводит информацию о каждом посте. При этом в цикле используются специально созданные для него функции: the_title(), the_permalink(), the_date() и т.д.-->
+
+            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                <!-- Цикл WordPress -->
+                <p>Выводим данные записи. Здесь работают функции для цикла, например, the_title() </p>
+                <h3><?php the_title(); ?></h3>
+
+            <?php endwhile; else : ?>
+                <p>Записей нет.</p>
+            <?php endif; ?>
+
+            <!-- -----------End Цикл WordPress (The Loop)---------------- -->
 
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <div class="col">
@@ -269,7 +282,7 @@
 
 </main>
 
-<?php get_footer();  ?>
+<?php get_footer(); ?>
 
 <!-- Переносим футер в footer.php
 
