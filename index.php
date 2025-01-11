@@ -1,4 +1,4 @@
-<!doctype html>
+<!--<!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -8,7 +8,7 @@
     <meta name="generator" content="Hugo 0.88.1">
     <title>Album example · Bootstrap v5.3.3</title>
 
-    <?php wp_head();?>
+    <?php //wp_head();?>
 </head>
 
 <body>
@@ -52,6 +52,10 @@
         </div>
     </div>
 </header>
+
+Подключили в файле header.php-->
+<?php get_header();  ?>
+
 
 <main>
 
@@ -265,6 +269,10 @@
 
 </main>
 
+<?php get_footer();  ?>
+
+<!-- Переносим футер в footer.php
+
 <footer class="text-muted py-5">
     <div class="container">
         <p class="float-end mb-1">
@@ -278,7 +286,9 @@
 
 
 </footer>
-<?php wp_footer();?>
+<?php //wp_footer();?>
 
 </body>
 </html>
+
+________________________________ -->
