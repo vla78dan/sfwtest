@@ -1,3 +1,3 @@
-jQuery(document).ready( function($){
-    alert('Working!');
-});
+// jQuery(document).ready( function($){
+//      alert('Working!');
+// });

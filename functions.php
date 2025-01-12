@@ -33,4 +33,14 @@ function sfwtest_scripts()
 
 add_action('wp_enqueue_scripts', 'sfwtest_scripts');
 
+add_filter( 'excerpt_more', function($more){
+    //var_dump($more);
+    return '...';
+} );
+function wfmtest_get_human_time() {
+    $time_diff = human_time_diff( get_post_time('U'), current_time('timestamp') );
+    return "Опубликовано $time_diff назад.";
+
+};
+
 
