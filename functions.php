@@ -37,10 +37,14 @@ add_filter( 'excerpt_more', function($more){
     //var_dump($more);
     return '...';
 } );
-function wfmtest_get_human_time() {
+function sfwtest_get_human_time() {
     $time_diff = human_time_diff( get_post_time('U'), current_time('timestamp') );
     return "Опубликовано $time_diff назад.";
-
 };
+
+function sfwtest_setup() {
+    add_theme_support('post-thumbnails');
+};
+add_action('after_setup_theme', 'sfwtest_setup');
 
 

@@ -72,12 +72,10 @@
 
                     <div class="col">
                         <div class="card shadow-sm">
-                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                                 xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                                 preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                                <rect width="100%" height="100%" fill="#55595c"/>
-                                <text x="50%" y="50%" fill="#eceeef" dy=".3em"><?php the_title(); ?>></text>
-                            </svg>
+
+                        <div class="card-thumb">
+                            <?php the_post_thumbnail('full'); ?>
+                        </div>
 
                             <div class="card-body">
                                 <div class="card-text"><?php the_excerpt(); //the_content('');?></div>
@@ -88,7 +86,7 @@
                                     </div>
                                     <small class="text-muted">
                                         <?php
-                                        echo wfmtest_get_human_time();
+                                        echo sfwtest_get_human_time();
 
                                         /*$time_diff = human_time_diff(get_post_time('U'), current_time('timestamp'));
                                         echo "Опубликовано $time_diff назад.";
