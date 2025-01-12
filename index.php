@@ -72,12 +72,25 @@
 
                     <div class="col">
                         <div class="card shadow-sm">
+                            <?php echo sfwtest_post_thumb(get_the_ID())  ?>
 
-                        <div class="card-thumb">
-                            <?php the_post_thumbnail('full'); ?>
-                        </div>
+<!-- -------------------------------function sfwtest_postthumb()
+                            <div class="card-thumb">
+                                    <?php //if (has_post_thumbnail()): ?>
+                                    <?php //the_post_thumbnail('full', array('class' => "attachment-test")); ?>
+                                <?php //else: ?>
+                                <img src="https://picsum.photos/seed/picsum/1200/900"
+                                     class="attachment-test"
+                                     alt=""
+                                     width="1200"
+                                     height="900">
+                                <?php //endif; ?>
+                             </div>
+
+ END ---------------------------------function sfwtest_postthumb() -->
 
                             <div class="card-body">
+                                <h5 class="card-title"><?php the_title();  ?></h5>
                                 <div class="card-text"><?php the_excerpt(); //the_content('');?></div>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">

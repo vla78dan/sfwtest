@@ -5,6 +5,7 @@ function sfwtest_debug($data)
     echo '<pre>' . print_r($data, 1) . '</pre>';
 
 }
+
 //sfwtest_debug(wp_get_theme() ->get("Version"));
 
 function sfwtest_scripts()
@@ -33,18 +34,64 @@ function sfwtest_scripts()
 
 add_action('wp_enqueue_scripts', 'sfwtest_scripts');
 
-add_filter( 'excerpt_more', function($more){
+add_filter('excerpt_more', function ($more) {
     //var_dump($more);
     return '...';
-} );
-function sfwtest_get_human_time() {
-    $time_diff = human_time_diff( get_post_time('U'), current_time('timestamp') );
+});
+function sfwtest_get_human_time()
+{
+    $time_diff = human_time_diff(get_post_time('U'), current_time('timestamp'));
     return "Опубликовано $time_diff назад.";
-};
+}
 
-function sfwtest_setup() {
+;
+
+function sfwtest_setup()
+{
     add_theme_support('post-thumbnails');
-};
+}
+
+;
 add_action('after_setup_theme', 'sfwtest_setup');
+
+function sfwtest_post_thumb($id, $size = 'full', $wrapper_class = 'card-thumb')
+{
+    //global $post;
+    $html = '<div class="' . $wrapper_class . '">';
+    if (has_post_thumbnail()) {
+        $html .= get_the_post_thumbnail($id, $size);
+    } else {
+        $html .= '<img src="https://picsum.photos/seed/picsum/1200/900"                             class="attachment-test" alt="" width="1200" height="900">';
+    }
+    $html .= '</div>';
+    return $html;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
